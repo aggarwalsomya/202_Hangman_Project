@@ -5,13 +5,25 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
+
+import com.ggl.hangman.Hangman;
+import com.ggl.hangman.command.BookClickedCommand;
+import com.ggl.hangman.command.ICategoryCommand;
+import com.ggl.hangman.command.IMenuInvoker;
+import com.ggl.hangman.command.IMenuReceiver;
+import com.ggl.hangman.command.MenuCategoryInvoker;
+import com.ggl.hangman.command.MovieClickedCommand;
+
 import javax.swing.JButton;
 
-public class menu extends JFrame {
+public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private optionListener listen;
+	public static String BOOK_CATEGORY = "Book";
+	public static String MOVIE_CATEGORY = "Movie";
 
 	/**
 	 * Launch the application.
@@ -20,7 +32,7 @@ public class menu extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					menu frame = new menu();
+					Menu frame = new Menu();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,21 +44,51 @@ public class menu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public menu() {
+	public Menu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		//Somya--Start
+		//Creating the factory object here.
+		//Future extension: Can apply a strategy to choose a factory too.
+		IPhraseFactory f = new PhraseFactory();
+
+		//Creating the object of the Command and setting its receiver to do the option.
+		ICategoryCommand bookClicked = new BookClickedCommand();
+		bookClicked.setReceiver(new IMenuReceiver() {
+			
+			@Override
+			public void doAction() {
+				SwingUtilities.invokeLater(new Hangman(BOOK_CATEGORY, f));		
+			}
+		});
 		
-		listen = new optionListener();
-		JButton bookButton = new JButton("Book");
+		ICategoryCommand movieClicked = new MovieClickedCommand();
+		movieClicked.setReceiver(new IMenuReceiver() {
+			
+			@Override
+			public void doAction() {
+				SwingUtilities.invokeLater(new Hangman(MOVIE_CATEGORY, f));	
+			}
+		});
+		
+		IMenuInvoker menuInvoker_ = new MenuCategoryInvoker();
+		menuInvoker_.setCommand(BOOK_CATEGORY, bookClicked);
+		menuInvoker_.setCommand(MOVIE_CATEGORY, movieClicked);
+		//Somya--end
+		
+		
+		listen = new optionListener(menuInvoker_);
+		JButton bookButton = new JButton(BOOK_CATEGORY);
 		bookButton.addActionListener(listen);
 		bookButton.setBounds(16, 19, 117, 29);
 		contentPane.add(bookButton);
 		
-		JButton movieButton = new JButton("Movie");
+		JButton movieButton = new JButton(MOVIE_CATEGORY);
 		movieButton.addActionListener(listen);
 		movieButton.setBounds(16, 68, 117, 29);
 		contentPane.add(movieButton);
