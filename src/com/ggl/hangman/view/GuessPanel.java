@@ -199,12 +199,15 @@ public class GuessPanel implements IGameControl{
         public void actionPerformed(ActionEvent event) {
             String letter = guessTextField.getText();
             if ((letter.length() == 1) && (model.isPossibleLetter(letter))) {
+            	
+//            	sendCommand("LETTER_GUESSED", letter);
+            	
                 model.guessLetter(letter);
                 updatePartControl();
                 drawingPanel.repaint();
                 guessTextField.setText("");
                 guessTextField.requestFocusInWindow();
- 
+
                 if (model.isDead()) {
                     JOptionPane.showMessageDialog(getOutsidePanel(),
                             "You died.  The phrase was\n"

@@ -6,7 +6,7 @@ import java.util.Random;
 
 
 
-public class MoviePhrase implements Phrase{
+public class MoviePhrase implements IPhrase{
 
 	private int             randomInt;
 	 

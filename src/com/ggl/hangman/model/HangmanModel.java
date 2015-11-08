@@ -16,29 +16,19 @@ public class HangmanModel implements IGameAdapter{
  
     private List<Character>   unguessedLetters;
  
-    private Phrase          phrase;
+    private IPhrase          phrase;
     private PhraseOrig          phraseOrig;
  
     private String          currentPhrase;
     private String          hiddenPhrase;
+    
+    IPhraseFactory phraseFactory_;
  
-    public HangmanModel() {
-    	this.phraseOrig = new PhraseOrig();
-        init();
-    }
- 
-    public HangmanModel(String category) {
-    	this.phrase = createPhrase(category);
+    public HangmanModel(IPhraseFactory inFactory, String category) {
+    	this.phraseFactory_ = inFactory;
+    	this.phrase = phraseFactory_.createPhrase(category);
     	System.out.println("Object returned : " + this.phrase.getClass().getName());
         init();
-	}
-
-	private Phrase createPhrase(String category) {
-		if(category.equals("Movie"))
-			return new MoviePhrase();
-		else if(category.equals("Book"))
-			return new BookPhrase();
-		return null;
 	}
 
 	public void init() {
@@ -49,7 +39,7 @@ public class HangmanModel implements IGameAdapter{
         this.currentPhrase = phrase.getPhrase();
         this.hiddenPhrase = phrase.getHiddenPhrase();
     }
- 
+
     private List<Character> resetLettersGuessed() {
         List<Character> unguessedLetters = new ArrayList<Character>();
         for (int i = 0; i < 26; i++) {
@@ -172,13 +162,11 @@ public class HangmanModel implements IGameAdapter{
 	@Override
 	public void won() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void lose() {
 		// TODO Auto-generated method stub
-		
 	}
  
 }

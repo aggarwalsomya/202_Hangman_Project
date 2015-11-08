@@ -41,7 +41,7 @@ public class HangmanFrame {
                 exitProcedure();
             }
         });
- 
+
         frame.setLayout(new FlowLayout());
  
         JPanel panel = new JPanel();

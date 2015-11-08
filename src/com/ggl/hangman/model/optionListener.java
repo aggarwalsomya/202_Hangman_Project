@@ -13,14 +13,17 @@ public class optionListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println(e.getActionCommand());
-		if(e.getActionCommand().equals("Book")) {
-			SwingUtilities.invokeLater(new Hangman("Book"));
-		}else if (e.getActionCommand().equals("Movie")) {
-			SwingUtilities.invokeLater(new Hangman("Movie"));
-		}
+		// don't bind observer with logic. 
+		// It should send a command for some event and then controller should define the logic.
+//		sendCommand("OPTION_SELECTED", e.getActionCommand());
 		
-	}
-	
-	
+		//create a static factory for the time being
+		IPhraseFactory f = new PhraseFactory();
 
+		if(e.getActionCommand().equals("Book")) {
+			SwingUtilities.invokeLater(new Hangman("Book", f));
+		}else if (e.getActionCommand().equals("Movie")) {
+			SwingUtilities.invokeLater(new Hangman("Movie", f));
+		}
+	}
 }
