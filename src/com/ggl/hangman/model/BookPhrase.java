@@ -24,6 +24,11 @@ public class BookPhrase implements IPhrase {
 		this.phrases.add("Angels and Demons");
 	}
 
+	@Override
+	public void setPhrases(List<String> phrases) {
+		this.phrases = phrases;
+		
+	}
 	public String getPhrase() {
 		int nextInt = randomInt;
 		while (nextInt == randomInt) {

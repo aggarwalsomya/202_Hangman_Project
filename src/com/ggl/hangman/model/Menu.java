@@ -22,8 +22,7 @@ public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private optionListener listen;
-	public static String BOOK_CATEGORY = "Book";
-	public static String MOVIE_CATEGORY = "Movie";
+	
 
 	/**
 	 * Launch the application.
@@ -63,7 +62,8 @@ public class Menu extends JFrame {
 			
 			@Override
 			public void doAction() {
-				SwingUtilities.invokeLater(new Hangman(BOOK_CATEGORY, f));		
+				SwingUtilities.invokeLater(new AgeSelection(HangmanConstants.BOOK_CATEGORY,f));
+				//SwingUtilities.invokeLater(new Hangman(HangmanConstants.BOOK_CATEGORY, f, ""));		
 			}
 		});
 		
@@ -72,23 +72,24 @@ public class Menu extends JFrame {
 			
 			@Override
 			public void doAction() {
-				SwingUtilities.invokeLater(new Hangman(MOVIE_CATEGORY, f));	
+				SwingUtilities.invokeLater(new AgeSelection(HangmanConstants.MOVIE_CATEGORY,f));
+				//SwingUtilities.invokeLater(new Hangman(MOVIE_CATEGORY, f));	
 			}
 		});
 		
 		IMenuInvoker menuInvoker_ = new MenuCategoryInvoker();
-		menuInvoker_.setCommand(BOOK_CATEGORY, bookClicked);
-		menuInvoker_.setCommand(MOVIE_CATEGORY, movieClicked);
+		menuInvoker_.setCommand(HangmanConstants.BOOK_CATEGORY, bookClicked);
+		menuInvoker_.setCommand(HangmanConstants.MOVIE_CATEGORY, movieClicked);
 		//Somya--end
 		
 		
 		listen = new optionListener(menuInvoker_);
-		JButton bookButton = new JButton(BOOK_CATEGORY);
+		JButton bookButton = new JButton(HangmanConstants.BOOK_CATEGORY);
 		bookButton.addActionListener(listen);
 		bookButton.setBounds(16, 19, 117, 29);
 		contentPane.add(bookButton);
 		
-		JButton movieButton = new JButton(MOVIE_CATEGORY);
+		JButton movieButton = new JButton(HangmanConstants.MOVIE_CATEGORY);
 		movieButton.addActionListener(listen);
 		movieButton.setBounds(16, 68, 117, 29);
 		contentPane.add(movieButton);

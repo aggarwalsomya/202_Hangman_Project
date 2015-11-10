@@ -24,12 +24,17 @@ public class MoviePhrase implements IPhrase{
         this.randomInt = -1;
  
        
-        this.phrases = new ArrayList<String>();
+        /*this.phrases = new ArrayList<String>();
         this.phrases.add("Terminator");
         this.phrases.add("Big Daddy");
-        this.phrases.add("Legally Blonde");
+        this.phrases.add("Legally Blonde");*/
     }
 	
+    @Override
+    public void setPhrases(List<String> phrases) {
+    	this.phrases = phrases;
+    	
+    }
    
     public String getPhrase() {
         int nextInt = randomInt;

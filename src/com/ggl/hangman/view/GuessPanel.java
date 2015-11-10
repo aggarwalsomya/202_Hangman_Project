@@ -229,7 +229,7 @@ public class GuessPanel implements IGameControl, Observer {
         }
  
         private void init() {
-            model.init();
+            model.init("");
             resetPartControl();
             frame.getFrame().pack();
         }

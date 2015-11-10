@@ -3,9 +3,12 @@ package com.ggl.hangman.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ggl.hangman.view.GuessPanel;
+import com.ggl.hangman.strategy.AdultStrategy;
+import com.ggl.hangman.strategy.KidsStrategy;
+import com.ggl.hangman.strategy.TeenStrategy;
 import com.ggl.hangman.view.HangmanPanel;
 import com.ggl.hangman.view.Observer;
+import com.ggl.hangman.view.GuessPanel;
 
 public class HangmanModel implements Subject{
  
@@ -24,22 +27,42 @@ public class HangmanModel implements Subject{
     
     IPhraseFactory phraseFactory_;
  
-    public HangmanModel(IPhraseFactory inFactory, String category) {
+    public HangmanModel(IPhraseFactory inFactory, String category, String ageCategory) {
     	this.phraseFactory_ = inFactory;
     	this.phrase = phraseFactory_.createPhrase(category);
     	System.out.println("Object returned : " + this.phrase.getClass().getName());
     	//observer = new GuessPanel(null, this);
-        init();
+        init(ageCategory);
 	}
 
-	public void init() {
+	public void init(String ageCategory) {
         this.numberOfGuesses = 0;
         this.wrongGuesses = 0;
         this.maximumWrongGuesses = HangmanPanel.maximumWrongGuesses;
         this.unguessedLetters = resetLettersGuessed();
+        
+        getPhraseList(ageCategory);
+        
         this.currentPhrase = phrase.getPhrase();
         this.hiddenPhrase = phrase.getHiddenPhrase();
+        
     }
+
+	private void getPhraseList(String ageCategory) {
+		if(ageCategory.equals(HangmanConstants.KIDS_AGE_CATEGORY)){
+			List<String> phrases = new KidsStrategy().getList(ageCategory, this.phrase);
+			phrase.setPhrases(phrases);
+			System.out.println("Phrases retuned : " + phrases);
+		} else if(ageCategory.equals(HangmanConstants.TEEN_AGE_CATEGORY)){
+			List<String> phrases = new TeenStrategy().getList(ageCategory, this.phrase);
+			phrase.setPhrases(phrases);
+			System.out.println("Phrases retuned : " + phrases);
+		} else if(ageCategory.equals(HangmanConstants.ADULT_AGE_CATEGORY)){
+			List<String> phrases = new AdultStrategy().getList(ageCategory, this.phrase);
+			phrase.setPhrases(phrases);
+			System.out.println("Phrases retuned : " + phrases);
+		}
+	}
 
     private List<Character> resetLettersGuessed() {
         List<Character> unguessedLetters = new ArrayList<Character>();
@@ -160,8 +183,6 @@ public class HangmanModel implements Subject{
     public String getCurrentPhrase() {
         return currentPhrase;
     }
-
-	
 
 	@Override
 	public void attach(Observer obj) {
