@@ -32,7 +32,7 @@ import javax.swing.KeyStroke;
 import com.ggl.hangman.model.HangmanModel;
 import com.ggl.hangman.model.IGameAdapter;
  
-public class GuessPanel implements IGameControl{
+public class GuessPanel implements IGameControl, Observer {
     protected static final Insets   bottomInsets    = new Insets(10, 10, 10, 10);
     protected static final Insets   normalInsets    = new Insets(10, 10, 0, 10);
     protected static final Insets   spacingInsets   = new Insets(20, 10, 0, 10);
@@ -63,6 +63,7 @@ public class GuessPanel implements IGameControl{
         this.model = model;
         this.phrase = new ArrayList<String>();
         this.phraseText = new ArrayList<JLabel>();
+        this.model.attach(this);
         createPartControl();
     }
  
@@ -203,8 +204,9 @@ public class GuessPanel implements IGameControl{
 //            	sendCommand("LETTER_GUESSED", letter);
             	
                 model.guessLetter(letter);
+                update();
                 updatePartControl();
-                drawingPanel.repaint();
+              // drawingPanel.repaint();
                 guessTextField.setText("");
                 guessTextField.requestFocusInWindow();
 
@@ -244,6 +246,14 @@ public class GuessPanel implements IGameControl{
 	public String reset() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		int wg= model.getWrongGuesses(); //subject state
+		drawingPanel.repaint();
+		
 	}
  
 }

@@ -2,13 +2,12 @@ package com.ggl.hangman.model;
  
 import java.util.ArrayList;
 import java.util.List;
- 
 
-
-
+import com.ggl.hangman.view.GuessPanel;
 import com.ggl.hangman.view.HangmanPanel;
+import com.ggl.hangman.view.Observer;
 
-public class HangmanModel implements IGameAdapter{
+public class HangmanModel implements Subject{
  
     private int             maximumWrongGuesses;
     private int             numberOfGuesses;
@@ -21,6 +20,7 @@ public class HangmanModel implements IGameAdapter{
  
     private String          currentPhrase;
     private String          hiddenPhrase;
+    private  List<Observer> observer=new ArrayList<Observer>(); 
     
     IPhraseFactory phraseFactory_;
  
@@ -28,6 +28,7 @@ public class HangmanModel implements IGameAdapter{
     	this.phraseFactory_ = inFactory;
     	this.phrase = phraseFactory_.createPhrase(category);
     	System.out.println("Object returned : " + this.phrase.getClass().getName());
+    	//observer = new GuessPanel(null, this);
         init();
 	}
 
@@ -75,6 +76,7 @@ public class HangmanModel implements IGameAdapter{
  
         if (incorrectGuess) {
             wrongGuesses++;
+            notifyObserver();
         }
  
         Character c = u.charAt(0);
@@ -159,14 +161,32 @@ public class HangmanModel implements IGameAdapter{
         return currentPhrase;
     }
 
+	
+
 	@Override
-	public void won() {
+	public void attach(Observer obj) {
 		// TODO Auto-generated method stub
+		System.out.println("hello attach observer");
+
+		observer.add(obj);
+		
 	}
 
 	@Override
-	public void lose() {
+	public void detach(Observer obj) {
 		// TODO Auto-generated method stub
+		observer.remove(obj);
+
+	}
+
+	@Override
+	public void notifyObserver() {
+		// TODO Auto-generated method stub
+		for(Observer obj : observer){
+			System.out.println("hello notify observer");
+			obj.update();
+		}
+		
 	}
  
 }
