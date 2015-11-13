@@ -1,4 +1,4 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.strategy;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -17,6 +17,8 @@ import com.ggl.hangman.command.IMenuInvoker;
 import com.ggl.hangman.command.IMenuReceiver;
 import com.ggl.hangman.command.MenuCategoryInvoker;
 import com.ggl.hangman.command.MovieClickedCommand;
+import com.ggl.hangman.model.HangmanConstants;
+import com.ggl.hangman.model.IPhraseFactory;
 import com.ggl.hangman.view.HangmanFrame;
 
 import javax.swing.JButton;

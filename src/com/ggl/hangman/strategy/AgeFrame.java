@@ -1,4 +1,4 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.strategy;
  
 import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;

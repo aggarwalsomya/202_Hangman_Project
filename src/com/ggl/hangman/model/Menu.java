@@ -15,6 +15,7 @@ import com.ggl.hangman.command.IMenuInvoker;
 import com.ggl.hangman.command.IMenuReceiver;
 import com.ggl.hangman.command.MenuCategoryInvoker;
 import com.ggl.hangman.command.MovieClickedCommand;
+import com.ggl.hangman.strategy.AgeSelection;
 
 import javax.swing.JButton;
 
