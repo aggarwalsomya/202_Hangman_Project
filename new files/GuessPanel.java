@@ -1,4 +1,4 @@
-package com.ggl.hangman.common;
+package com.ggl.hangman.view;
  
 import java.awt.Component;
 import java.awt.Container;
@@ -25,11 +25,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
+ 
 
-import com.ggl.hangman.observer.IObserver;
+
+
+import com.ggl.hangman.model.HangmanModel;
+import com.ggl.hangman.model.IGameAdapter;
 import java.awt.Color;
  
-public class GuessPanel implements IObserver {
+public class GuessPanel implements IGameControl, Observer {
     protected static final Insets   bottomInsets    = new Insets(10, 10, 10, 10);
     protected static final Insets   normalInsets    = new Insets(10, 10, 0, 10);
     protected static final Insets   spacingInsets   = new Insets(20, 10, 0, 10);
@@ -235,6 +239,18 @@ public class GuessPanel implements IObserver {
         }
  
     }
+
+	@Override
+	public void guess() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String reset() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public void update() {

@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
  
 
-import com.ggl.hangman.common.HangmanModel;
+import com.ggl.hangman.model.HangmanModel;
 import java.awt.Color;
  
 public class AgeFrame {

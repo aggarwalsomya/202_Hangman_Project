@@ -1,4 +1,4 @@
-package com.ggl.hangman.common;
+package com.ggl.hangman.view;
  
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
  
 import javax.swing.JPanel;
+ 
+import com.ggl.hangman.model.HangmanModel;
  
 public class HangmanPanel extends JPanel {
      
@@ -36,6 +38,7 @@ public class HangmanPanel extends JPanel {
         g.setColor(color1);
          
         switch (model.getWrongGuesses()) {
+       // switch (10) {
         case 10:
             color2 = Color.red;
             drawNoose(g, color2);
