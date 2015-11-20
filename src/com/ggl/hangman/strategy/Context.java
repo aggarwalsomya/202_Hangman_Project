@@ -5,9 +5,9 @@ import java.util.List;
 import com.ggl.hangman.model.IPhrase;
 
 public class Context {
-	private AgeStrategy strategy;
+	private IAgeStrategy strategy;
 
-	public Context(AgeStrategy strategy){
+	public Context(IAgeStrategy strategy){
 		this.strategy = strategy;
 	}
 

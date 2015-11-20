@@ -32,7 +32,7 @@ import javax.swing.KeyStroke;
 import com.ggl.hangman.model.HangmanModel;
 import com.ggl.hangman.model.IGameAdapter;
  
-public class GuessPanel implements IGameControl, Observer {
+public class GuessPanel implements IGameControl, IObserver {
     protected static final Insets   bottomInsets    = new Insets(10, 10, 10, 10);
     protected static final Insets   normalInsets    = new Insets(10, 10, 0, 10);
     protected static final Insets   spacingInsets   = new Insets(20, 10, 0, 10);

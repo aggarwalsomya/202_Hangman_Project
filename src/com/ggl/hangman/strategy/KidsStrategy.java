@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.ggl.hangman.model.IPhrase;
 
-public class KidsStrategy implements AgeStrategy {
+public class KidsStrategy implements IAgeStrategy {
 	@Override
 	public List<String> getList(IPhrase phrase) {
 		List<String> phrases = new ArrayList<String>();

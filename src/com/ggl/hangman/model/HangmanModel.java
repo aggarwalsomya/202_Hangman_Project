@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ggl.hangman.strategy.AdultStrategy;
-import com.ggl.hangman.strategy.AgeStrategy;
+import com.ggl.hangman.strategy.IAgeStrategy;
 import com.ggl.hangman.strategy.Context;
 import com.ggl.hangman.strategy.KidsStrategy;
 import com.ggl.hangman.strategy.TeenStrategy;
 import com.ggl.hangman.view.HangmanPanel;
-import com.ggl.hangman.view.Observer;
+import com.ggl.hangman.view.IObserver;
 import com.ggl.hangman.view.GuessPanel;
 
 public class HangmanModel implements Subject{
@@ -25,7 +25,7 @@ public class HangmanModel implements Subject{
  
     private String          currentPhrase;
     private String          hiddenPhrase;
-    private  List<Observer> observer=new ArrayList<Observer>(); 
+    private  List<IObserver> observer=new ArrayList<IObserver>(); 
     
     IPhraseFactory phraseFactory_;
  
@@ -193,7 +193,7 @@ public class HangmanModel implements Subject{
     }
 
 	@Override
-	public void attach(Observer obj) {
+	public void attach(IObserver obj) {
 		// TODO Auto-generated method stub
 		System.out.println("hello attach observer");
 
@@ -202,7 +202,7 @@ public class HangmanModel implements Subject{
 	}
 
 	@Override
-	public void detach(Observer obj) {
+	public void detach(IObserver obj) {
 		// TODO Auto-generated method stub
 		observer.remove(obj);
 
@@ -211,7 +211,7 @@ public class HangmanModel implements Subject{
 	@Override
 	public void notifyObserver() {
 		// TODO Auto-generated method stub
-		for(Observer obj : observer){
+		for(IObserver obj : observer){
 			System.out.println("hello notify observer");
 			obj.update();
 		}

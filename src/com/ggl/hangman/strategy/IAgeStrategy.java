@@ -4,6 +4,6 @@ import java.util.List;
 
 import com.ggl.hangman.model.IPhrase;
 
-public interface AgeStrategy {
+public interface IAgeStrategy {
 	List<String> getList(IPhrase phrase);
 }

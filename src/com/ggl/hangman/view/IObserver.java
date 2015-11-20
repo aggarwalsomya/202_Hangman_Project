@@ -1,6 +1,6 @@
 package com.ggl.hangman.view;
 
-public interface Observer {
+public interface IObserver {
 	public void update();
 
 }
