@@ -1,4 +1,4 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.factory;
 
 public interface IPhraseFactory {
 	public IPhrase createPhrase(String category);

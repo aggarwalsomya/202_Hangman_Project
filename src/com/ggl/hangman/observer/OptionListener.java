@@ -1,17 +1,16 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.observer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.SwingUtilities;
 
-import com.ggl.hangman.Hangman;
 import com.ggl.hangman.command.IMenuInvoker;
 
-public class optionListener implements ActionListener {
+public class OptionListener implements ActionListener {
 
 	IMenuInvoker menuInvoker_;
-	public optionListener(IMenuInvoker menuInvoker) {
+	public OptionListener(IMenuInvoker menuInvoker) {
 		this.menuInvoker_ = menuInvoker;
 	}
 	

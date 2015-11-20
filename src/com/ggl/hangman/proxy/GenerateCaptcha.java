@@ -1,4 +1,4 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.proxy;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -15,14 +15,15 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-import com.ggl.hangman.Hangman;
 import com.ggl.hangman.command.BookClickedCommand;
 import com.ggl.hangman.command.ICategoryCommand;
 import com.ggl.hangman.command.IMenuInvoker;
 import com.ggl.hangman.command.IMenuReceiver;
 import com.ggl.hangman.command.MenuCategoryInvoker;
 import com.ggl.hangman.command.MovieClickedCommand;
-
+import com.ggl.hangman.common.Hangman;
+import com.ggl.hangman.common.Menu;
+import com.ggl.hangman.observer.OptionListener;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -33,7 +34,7 @@ public class GenerateCaptcha extends JFrame implements ICaptchaGen, ActionListen
 	private JPanel contentPane;
 	public JLabel gamename = new JLabel("HANGMAN..");
 	public JLabel tagline = new JLabel("Save the World!");
-	private optionListener listen;
+	private OptionListener listen;
 	public StringBuffer captchaStringBuffer = new StringBuffer();
 	public StringBuilder captchaString = new StringBuilder(7);
 	public String captcha = "Generate Captcha";

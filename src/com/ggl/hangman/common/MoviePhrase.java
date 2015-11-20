@@ -1,8 +1,10 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.common;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import com.ggl.hangman.factory.IPhrase;
 
 
 

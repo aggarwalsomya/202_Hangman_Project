@@ -1,4 +1,4 @@
-package com.ggl.hangman.view;
+package com.ggl.hangman.common;
  
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -7,8 +7,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
  
 import javax.swing.JPanel;
- 
-import com.ggl.hangman.model.HangmanModel;
  
 public class HangmanPanel extends JPanel {
      

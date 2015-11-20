@@ -1,17 +1,14 @@
-package com.ggl.hangman;
+package com.ggl.hangman.common;
 
 import java.util.List;
 
 import javax.swing.SwingUtilities;
 
-import com.ggl.hangman.model.HangmanConstants;
-import com.ggl.hangman.model.HangmanModel;
-import com.ggl.hangman.model.IPhraseFactory;
+import com.ggl.hangman.factory.IPhraseFactory;
 import com.ggl.hangman.strategy.AdultStrategy;
 import com.ggl.hangman.strategy.IAgeStrategy;
 import com.ggl.hangman.strategy.KidsStrategy;
 import com.ggl.hangman.strategy.TeenStrategy;
-import com.ggl.hangman.view.HangmanFrame;
 
 //Here Hangman is a thread. new Hangman wherever done will create a new thread and call its run method
 public class Hangman implements Runnable {

@@ -1,16 +1,16 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.common;
  
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ggl.hangman.factory.IPhrase;
+import com.ggl.hangman.factory.IPhraseFactory;
+import com.ggl.hangman.observer.IObserver;
 import com.ggl.hangman.strategy.AdultStrategy;
 import com.ggl.hangman.strategy.IAgeStrategy;
 import com.ggl.hangman.strategy.Context;
 import com.ggl.hangman.strategy.KidsStrategy;
 import com.ggl.hangman.strategy.TeenStrategy;
-import com.ggl.hangman.view.HangmanPanel;
-import com.ggl.hangman.view.IObserver;
-import com.ggl.hangman.view.GuessPanel;
 
 public class HangmanModel implements Subject{
  
@@ -21,7 +21,6 @@ public class HangmanModel implements Subject{
     private List<Character>   unguessedLetters;
  
     private IPhrase          phrase;
-    private PhraseOrig          phraseOrig;
  
     private String          currentPhrase;
     private String          hiddenPhrase;

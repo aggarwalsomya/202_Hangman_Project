@@ -8,9 +8,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
- 
 
-import com.ggl.hangman.model.HangmanModel;
+import com.ggl.hangman.common.HangmanModel;
  
 public class AgeFrame {
  

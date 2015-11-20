@@ -1,4 +1,4 @@
-package com.ggl.hangman.view;
+package com.ggl.hangman.common;
  
 import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
@@ -8,9 +8,6 @@ import java.awt.event.WindowEvent;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
- 
-
-import com.ggl.hangman.model.HangmanModel;
  
 public class HangmanFrame {
  

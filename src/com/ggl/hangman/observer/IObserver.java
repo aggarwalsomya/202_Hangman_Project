@@ -1,4 +1,4 @@
-package com.ggl.hangman.view;
+package com.ggl.hangman.observer;
 
 public interface IObserver {
 	public void update();

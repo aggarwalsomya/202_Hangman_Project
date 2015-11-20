@@ -1,4 +1,4 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.proxy;
 
 public interface ICaptchaGen
 {

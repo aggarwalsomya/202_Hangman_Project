@@ -1,4 +1,4 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.common;
 
 public class HangmanConstants {
 	public static String BOOK_CATEGORY = "Book";

@@ -1,6 +1,6 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.common;
 
-import com.ggl.hangman.view.IObserver;
+import com.ggl.hangman.observer.IObserver;
 
 public interface Subject {
 	//hangman model is implementing Subject interface

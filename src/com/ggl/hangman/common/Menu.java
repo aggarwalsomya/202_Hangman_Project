@@ -1,4 +1,4 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.common;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -8,13 +8,15 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-import com.ggl.hangman.Hangman;
 import com.ggl.hangman.command.BookClickedCommand;
 import com.ggl.hangman.command.ICategoryCommand;
 import com.ggl.hangman.command.IMenuInvoker;
 import com.ggl.hangman.command.IMenuReceiver;
 import com.ggl.hangman.command.MenuCategoryInvoker;
 import com.ggl.hangman.command.MovieClickedCommand;
+import com.ggl.hangman.factory.IPhraseFactory;
+import com.ggl.hangman.factory.PhraseFactory;
+import com.ggl.hangman.observer.OptionListener;
 import com.ggl.hangman.strategy.AgeSelection;
 
 import javax.swing.JButton;
@@ -22,7 +24,7 @@ import javax.swing.JButton;
 public class Menu extends JFrame {
 
 	private JPanel contentPane;
-	private optionListener listen;
+	private OptionListener listen;
 	
 
 	/**
@@ -84,7 +86,7 @@ public class Menu extends JFrame {
 		//Somya--end
 		
 		
-		listen = new optionListener(menuInvoker_);
+		listen = new OptionListener(menuInvoker_);
 		JButton bookButton = new JButton(HangmanConstants.BOOK_CATEGORY);
 		bookButton.addActionListener(listen);
 		bookButton.setBounds(16, 19, 117, 29);

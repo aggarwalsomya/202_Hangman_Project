@@ -3,7 +3,7 @@ package com.ggl.hangman.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ggl.hangman.model.IPhrase;
+import com.ggl.hangman.factory.IPhrase;
 
 public class TeenStrategy implements IAgeStrategy {
 	@Override

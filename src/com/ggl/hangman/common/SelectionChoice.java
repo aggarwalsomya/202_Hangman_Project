@@ -1,4 +1,4 @@
-package com.ggl.hangman.view;
+package com.ggl.hangman.common;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class selectionChoice extends JFrame {
+public class SelectionChoice extends JFrame {
 
 	private JPanel contentPane;
 	private ActionListener newListener;
@@ -22,7 +22,7 @@ public class selectionChoice extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					selectionChoice frame = new selectionChoice();
+					SelectionChoice frame = new SelectionChoice();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class selectionChoice extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public selectionChoice() {
+	public SelectionChoice() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

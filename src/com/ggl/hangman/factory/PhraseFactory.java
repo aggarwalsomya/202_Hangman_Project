@@ -1,4 +1,8 @@
-package com.ggl.hangman.model;
+package com.ggl.hangman.factory;
+
+import com.ggl.hangman.common.BookPhrase;
+import com.ggl.hangman.common.HangmanConstants;
+import com.ggl.hangman.common.MoviePhrase;
 
 public class PhraseFactory implements IPhraseFactory{
 

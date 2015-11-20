@@ -10,16 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-import com.ggl.hangman.Hangman;
 import com.ggl.hangman.command.BookClickedCommand;
 import com.ggl.hangman.command.ICategoryCommand;
 import com.ggl.hangman.command.IMenuInvoker;
 import com.ggl.hangman.command.IMenuReceiver;
 import com.ggl.hangman.command.MenuCategoryInvoker;
 import com.ggl.hangman.command.MovieClickedCommand;
-import com.ggl.hangman.model.HangmanConstants;
-import com.ggl.hangman.model.IPhraseFactory;
-import com.ggl.hangman.view.HangmanFrame;
+import com.ggl.hangman.common.Hangman;
+import com.ggl.hangman.common.HangmanConstants;
+import com.ggl.hangman.common.HangmanFrame;
+import com.ggl.hangman.factory.IPhraseFactory;
 
 import javax.swing.JButton;
 
