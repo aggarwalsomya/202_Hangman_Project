@@ -30,7 +30,6 @@ import javax.swing.KeyStroke;
 
 
 import com.ggl.hangman.model.HangmanModel;
-import com.ggl.hangman.model.IGameAdapter;
  
 public class GuessPanel implements IGameControl, IObserver {
     protected static final Insets   bottomInsets    = new Insets(10, 10, 10, 10);
