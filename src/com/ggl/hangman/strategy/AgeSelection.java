@@ -23,9 +23,13 @@ import com.ggl.hangman.factory.IPhraseFactory;
 
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 public class AgeSelection extends JFrame implements Runnable{
 
@@ -43,8 +47,11 @@ public class AgeSelection extends JFrame implements Runnable{
 	 * @param f 
 	 */
 	public AgeSelection(String phraseCategory, IPhraseFactory f) {
+		setBackground(Color.GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 708, 454);
+		setBounds(100, 100, 540, 365);
+		setSize(new Dimension(714, 496));
+
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,7 +68,7 @@ public class AgeSelection extends JFrame implements Runnable{
 				
 			}
 		});
-		kidsAgeButton.setBounds(88, 19, 117, 29);
+		kidsAgeButton.setBounds(115, 172, 117, 29);
 		contentPane.add(kidsAgeButton);
 		
 		JButton teenAgeButton = new JButton(HangmanConstants.TEEN_AGE_CATEGORY);
@@ -74,7 +81,7 @@ public class AgeSelection extends JFrame implements Runnable{
 				
 			}
 		});
-		teenAgeButton.setBounds(237, 19, 117, 29);
+		teenAgeButton.setBounds(115, 212, 117, 29);
 		contentPane.add(teenAgeButton);
 		
 		JButton adultAgeButton = new JButton(HangmanConstants.ADULT_AGE_CATEGORY);
@@ -87,20 +94,23 @@ public class AgeSelection extends JFrame implements Runnable{
 				
 			}
 		});
-		adultAgeButton.setBounds(400, 19, 117, 29);
+		adultAgeButton.setBounds(115, 252, 117, 29);
 		contentPane.add(adultAgeButton);
-		String dir = null;
-		dir=System.getProperty("user.dir");
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(dir+"\\src\\Images\\AgeSelection.jpg"));
-		lblNewLabel.setBounds(10, 146, 682, 324);
-		contentPane.add(lblNewLabel);
+		
 		
 		JLabel lblPickYourAge = new JLabel("PICK YOUR AGE CATEGORY");
+		lblPickYourAge.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblPickYourAge.setForeground(Color.WHITE);
 		lblPickYourAge.setBackground(Color.ORANGE);
-		lblPickYourAge.setBounds(257, 79, 178, 29);
+		lblPickYourAge.setBounds(103, 34, 324, 29);
 		contentPane.add(lblPickYourAge);
+		
+		String dir2 = null;
+		dir2=System.getProperty("user.dir");
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(dir2+"\\src\\Images\\AgeSelection (2).jpg"));
+		lblNewLabel.setBounds(0, -129, 724, 930);
+		contentPane.add(lblNewLabel);
 	}
-
 }

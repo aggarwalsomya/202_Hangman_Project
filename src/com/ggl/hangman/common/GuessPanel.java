@@ -70,7 +70,7 @@ public class GuessPanel implements IObserver {
  
     private void createPartControl() {
         outsidePanel = new JPanel();
-        outsidePanel.setBackground(Color.BLACK);
+        outsidePanel.setBackground(Color.WHITE);
         outsidePanel.setLayout(new FlowLayout());
  
         panel = new JPanel();
@@ -107,7 +107,6 @@ public class GuessPanel implements IObserver {
         guessLetterTitle.setHorizontalAlignment(JLabel.CENTER);
         addComponent(panel, guessLetterTitle, 0, gridy++, 2, 1, spacingInsets,
                 GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
- 
         JPanel guessPanel = new JPanel();
         guessPanel.setLayout(new BoxLayout(guessPanel, BoxLayout.X_AXIS));
  
@@ -134,10 +133,19 @@ public class GuessPanel implements IObserver {
                 GridBagConstraints.CENTER, GridBagConstraints.NONE);
  
         phraseGridy = gridy;
+       /* ExitButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+
+        	}
+        });*/
+        
  
         createPhraseControl(panel, gridy);
  
         outsidePanel.add(panel);
+        
+       
     }
  
     public void updatePartControl() {

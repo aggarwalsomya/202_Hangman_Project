@@ -54,8 +54,8 @@ public class Menu extends JFrame {
 	 */
 	public Menu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(80, 100, 50, 300);
-		setSize(new Dimension(1000,800));
+		setBounds(100, 100, 540, 365);
+		setSize(new Dimension(600,400));
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setForeground(Color.BLACK);
@@ -99,44 +99,45 @@ public class Menu extends JFrame {
 		JButton bookButton = new JButton(HangmanConstants.BOOK_CATEGORY);
 		bookButton.setBackground(Color.ORANGE);
 		bookButton.addActionListener(listen);
-		bookButton.setBounds(404, 77, 221, 29);
+		bookButton.setBounds(51, 98, 221, 29);
 		contentPane.add(bookButton);
 		
 		JButton movieButton = new JButton(HangmanConstants.MOVIE_CATEGORY);
 		movieButton.setBackground(Color.ORANGE);
 		movieButton.addActionListener(listen);
-		movieButton.setBounds(404, 139, 221, 29);
+		movieButton.setBounds(51, 154, 221, 29);
 		contentPane.add(movieButton);
 		
 		JLabel lblNewLabel = new JLabel("Welcome to hangman");
 		lblNewLabel.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel.setFont(new Font("Sitka Subheading", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel.setFont(new Font("Sitka Subheading", Font.BOLD | Font.ITALIC, 25));
 		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setBounds(452, 11, 183, 22);
+		lblNewLabel.setBounds(41, 11, 358, 22);
 		contentPane.add(lblNewLabel);
 		
 		String dir = null;
 		dir=System.getProperty("user.dir");
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(dir+"\\src\\Images\\Hangman2.jpg"));
-		lblNewLabel_1.setBounds(0, 179, 561, 269);
-		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblChooseTheFollowing = new JLabel("Choose The following Category");
+		lblChooseTheFollowing.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblChooseTheFollowing.setForeground(Color.WHITE);
 		lblChooseTheFollowing.setBackground(Color.WHITE);
-		lblChooseTheFollowing.setBounds(419, 44, 183, 29);
+		lblChooseTheFollowing.setBounds(10, 44, 371, 29);
 		contentPane.add(lblChooseTheFollowing);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon(dir+"\\src\\Images\\fun.jpg"));
-		lblNewLabel_3.setBounds(30, 437, 499, 304);
-		contentPane.add(lblNewLabel_3);
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(dir+"\\src\\Images\\starts.jpg"));
+		lblNewLabel_1.setBounds(0, 11, 371, 339);
+		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setIcon(new ImageIcon(dir+"\\src\\Images\\funny-kid.jpg"));
-		lblNewLabel_4.setBounds(513, 179, 488, 536);
-		contentPane.add(lblNewLabel_4);
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon(dir+"\\src\\Images\\hangman.gif"));
+		lblNewLabel_2.setBounds(467, 263, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon(dir+"\\src\\Images\\\\hangman.gif"));
+		lblNewLabel_3.setBounds(381, 0, 193, 350);
+		contentPane.add(lblNewLabel_3);
 	}
-
 }
