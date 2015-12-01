@@ -1,3 +1,4 @@
+/*It is an interface for the Category Command*/
 package com.ggl.hangman.command;
 
 public interface ICategoryCommand {
