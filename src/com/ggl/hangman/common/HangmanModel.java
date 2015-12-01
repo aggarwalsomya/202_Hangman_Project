@@ -14,17 +14,25 @@ import com.ggl.hangman.strategy.TeenStrategy;
 
 public class HangmanModel implements Subject{
  
+	//max number of guesses that can go wrong before game ends.
     private int             maximumWrongGuesses;
+    
+    //current number of guesses
     private int             numberOfGuesses;
+    
+    //number of wrong guesses
     private int             wrongGuesses;
  
+    //stores the list of letters which are left to be guessed.
     private List<Character>   unguessedLetters;
  
     private IPhrase          phrase;
  
     private String          currentPhrase;
     private String          hiddenPhrase;
-    private  List<IObserver> observer=new ArrayList<IObserver>(); 
+    
+    //List of observers.
+    private  List<IObserver> observer = new ArrayList<IObserver>(); 
     
     IPhraseFactory phraseFactory_;
  
@@ -192,6 +200,7 @@ public class HangmanModel implements Subject{
     }
 
 	@Override
+	/*It attaches the observer*/
 	public void attach(IObserver obj) {
 		// TODO Auto-generated method stub
 		System.out.println("hello attach observer");
@@ -201,6 +210,7 @@ public class HangmanModel implements Subject{
 	}
 
 	@Override
+	/*Detaches the observer*/
 	public void detach(IObserver obj) {
 		// TODO Auto-generated method stub
 		observer.remove(obj);

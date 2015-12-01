@@ -1,3 +1,4 @@
+
 package com.ggl.hangman.common;
  
 import java.awt.FlowLayout;

@@ -1,3 +1,6 @@
+/*Guess panel is visible when the user starts playing the game.
+ * It shows the guess string, the input box to enter the character from the user.
+*/
 package com.ggl.hangman.common;
  
 import java.awt.Component;
@@ -208,9 +211,8 @@ public class GuessPanel implements IObserver {
         public void actionPerformed(ActionEvent event) {
             String letter = guessTextField.getText();
             if ((letter.length() == 1) && (model.isPossibleLetter(letter))) {
-            	
-//            	sendCommand("LETTER_GUESSED", letter);
-            	
+
+            	/*If the hangman drawing is complete then, the game loose message is displayed.*/
                 model.guessLetter(letter);
                 update();
                 updatePartControl();
@@ -224,6 +226,8 @@ public class GuessPanel implements IObserver {
                                     + model.getCurrentPhrase(),
                             "Death", JOptionPane.ERROR_MESSAGE);
                     init();
+                    
+                    /*If he solves the puzzle then he gets a win message.*/
                 } else if (model.isSolved()) {
                     JOptionPane.showMessageDialog(getOutsidePanel(),
                             "You guessed the phrase!\n"

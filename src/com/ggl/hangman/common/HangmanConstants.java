@@ -1,3 +1,4 @@
+/*Defines all the strings used in the panels as constants*/
 package com.ggl.hangman.common;
 
 public class HangmanConstants {
