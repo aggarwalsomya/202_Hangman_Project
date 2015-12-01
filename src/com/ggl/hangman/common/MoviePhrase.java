@@ -1,26 +1,15 @@
 package com.ggl.hangman.common;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import com.ggl.hangman.factory.IPhrase;
 
-
-
 public class MoviePhrase implements IPhrase{
-
 	private int             randomInt;
-	 
     private List<String>  phrases;
- 
     private Random          random;
- 
     private String          phrase;
  
-    
-	
-	
     public MoviePhrase() {
         random = new Random();
         this.randomInt = -1;

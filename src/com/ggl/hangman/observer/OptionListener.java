@@ -2,9 +2,6 @@ package com.ggl.hangman.observer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.SwingUtilities;
-
 import com.ggl.hangman.command.IMenuInvoker;
 
 public class OptionListener implements ActionListener {

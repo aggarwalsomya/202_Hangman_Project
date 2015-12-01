@@ -1,12 +1,8 @@
 package com.ggl.hangman.common;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,6 +23,7 @@ import com.ggl.hangman.strategy.AgeSelection;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
+@SuppressWarnings("serial")
 public class Menu extends JFrame {
 
 	private JPanel contentPane;

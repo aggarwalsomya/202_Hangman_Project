@@ -78,7 +78,6 @@ public class GuessPanel implements IObserver {
  
         panel = new JPanel();
         panel.setBackground(Color.WHITE);
-        // panel.setBackground(Color.YELLOW);
         panel.setLayout(new GridBagLayout());
  
         int gridy = 0;
@@ -136,19 +135,8 @@ public class GuessPanel implements IObserver {
                 GridBagConstraints.CENTER, GridBagConstraints.NONE);
  
         phraseGridy = gridy;
-       /* ExitButton.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-
-        	}
-        });*/
-        
- 
         createPhraseControl(panel, gridy);
- 
         outsidePanel.add(panel);
-        
-       
     }
  
     public void updatePartControl() {
@@ -216,7 +204,6 @@ public class GuessPanel implements IObserver {
                 model.guessLetter(letter);
                 update();
                 updatePartControl();
-              // drawingPanel.repaint();
                 guessTextField.setText("");
                 guessTextField.requestFocusInWindow();
 
@@ -250,8 +237,6 @@ public class GuessPanel implements IObserver {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		int wg= model.getWrongGuesses(); //subject state
 		drawingPanel.repaint();
 		
 	}
