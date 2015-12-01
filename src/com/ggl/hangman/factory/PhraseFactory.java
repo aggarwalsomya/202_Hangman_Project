@@ -1,3 +1,4 @@
+/*Factory here is created based on the book or movie category chosen by the user.*/
 package com.ggl.hangman.factory;
 
 import com.ggl.hangman.common.BookPhrase;

@@ -1,3 +1,4 @@
+/*Interface class for factory design pattern*/
 package com.ggl.hangman.factory;
 
 import java.util.List;
