@@ -24,18 +24,11 @@ public class MoviePhrase implements IPhrase{
     public MoviePhrase() {
         random = new Random();
         this.randomInt = -1;
- 
-       
-        /*this.phrases = new ArrayList<String>();
-        this.phrases.add("Terminator");
-        this.phrases.add("Big Daddy");
-        this.phrases.add("Legally Blonde");*/
     }
 	
     @Override
     public void setPhrases(List<String> phrases) {
     	this.phrases = phrases;
-    	
     }
    
     public String getPhrase() {
@@ -49,6 +42,7 @@ public class MoviePhrase implements IPhrase{
         return phrase;
     }
    
+    /*With each character that is not being guessed, it is replaced with an _ so that it is not visible to the user.*/
    public String getHiddenPhrase() {
        StringBuilder builder = new StringBuilder();
        for (int i = 0; i < phrase.length(); i++) {

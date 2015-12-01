@@ -1,3 +1,4 @@
+/*This panel is where the hangman drawing is updated upon each wrong guess*/
 package com.ggl.hangman.common;
  
 import java.awt.BasicStroke;
@@ -25,9 +26,9 @@ public class HangmanPanel extends JPanel {
     	setBackground(Color.BLACK);
         this.model = model;
         this.setPreferredSize(new Dimension(300, 400));
-//      this.setBackground(Color.WHITE);
     }
-     
+
+    /*Below different drawing components to draw various parts of the hangman.*/
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -31,24 +31,6 @@ public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private OptionListener listen;
-	
-
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Menu frame = new Menu();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
 	/**
 	 * Create the frame.
 	 */
@@ -75,7 +57,6 @@ public class Menu extends JFrame {
 			@Override
 			public void doAction() {
 				SwingUtilities.invokeLater(new AgeSelection(HangmanConstants.BOOK_CATEGORY,f));
-				//SwingUtilities.invokeLater(new Hangman(HangmanConstants.BOOK_CATEGORY, f, ""));		
 			}
 		});
 		
@@ -85,7 +66,6 @@ public class Menu extends JFrame {
 			@Override
 			public void doAction() {
 				SwingUtilities.invokeLater(new AgeSelection(HangmanConstants.MOVIE_CATEGORY,f));
-				//SwingUtilities.invokeLater(new Hangman(MOVIE_CATEGORY, f));	
 			}
 		});
 		
