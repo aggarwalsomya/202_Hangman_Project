@@ -14,13 +14,12 @@ public class OptionListener implements ActionListener {
 		this.menuInvoker_ = menuInvoker;
 	}
 	
-	//Here option listener is decoupled from the end observers which will do the action
-	//end observers will be the part of the command pattern.
-	//They are book and Movie in our case.
-	//Option listener simply calls the invoker to do the next action.
+	/*Here option listener is decoupled from the end observers which will do the action
+	end observers will be the part of the command pattern.
+	They are book and Movie in our case.
+	Option listener simply calls the invoker to do the next action.*/
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		System.out.println(e.getActionCommand());
 		menuInvoker_.invoke(e.getActionCommand());
 	}
