@@ -1,3 +1,5 @@
+/*Teen strategy is picked up when a user enters his age between 13-19 years.
+ * Phrases will be shown as per the age and the category chosen previously.*/
 package com.ggl.hangman.strategy;
 
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ public class TeenStrategy implements IAgeStrategy {
 	public List<String> getList(IPhrase phrase) {
 		List<String> phrases = new ArrayList<String>();
 		
-		System.out.println("KidsStrategy : " + phrase.getClass().getName());
+		System.out.println("TeenStrategy : " + phrase.getClass().getName());
 		if(phrase.getClass().getName().contains("MoviePhrase")) {
 	        phrases.add("Harry Potter and Deathly Hallows");
 	        phrases.add("Tintin");

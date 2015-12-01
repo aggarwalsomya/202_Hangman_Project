@@ -1,3 +1,5 @@
+/*Kids strategy is picked up when a user enters his age between 3-12 years.
+ * Phrases will be shown as per the age and the category chosen previously.*/
 package com.ggl.hangman.strategy;
 
 import java.util.ArrayList;

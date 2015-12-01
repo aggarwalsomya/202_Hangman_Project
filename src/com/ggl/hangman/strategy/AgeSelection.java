@@ -1,36 +1,22 @@
 package com.ggl.hangman.strategy;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
-
-import com.ggl.hangman.command.BookClickedCommand;
-import com.ggl.hangman.command.ICategoryCommand;
-import com.ggl.hangman.command.IMenuInvoker;
-import com.ggl.hangman.command.IMenuReceiver;
-import com.ggl.hangman.command.MenuCategoryInvoker;
-import com.ggl.hangman.command.MovieClickedCommand;
 import com.ggl.hangman.common.Hangman;
 import com.ggl.hangman.common.HangmanConstants;
-import com.ggl.hangman.common.HangmanFrame;
 import com.ggl.hangman.factory.IPhraseFactory;
-
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Dimension;
-
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import javax.swing.JTextField;
 import java.awt.Font;
-import java.awt.Toolkit;
 
+@SuppressWarnings("serial")
 public class AgeSelection extends JFrame implements Runnable{
 
 	private JPanel contentPane;
